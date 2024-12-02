@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="icon" href="logorpl7viska.png" type="image/png"> 
+    <style>
+      /* Mengatur tampilan dasar */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: poppins, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      header {
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+          background: rgba(255, 255, 255, 0.1); /* Transparansi ringan */
+          backdrop-filter: blur(10px); /* Efek blur di belakang */
+        color: black;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+
+      header .logo h1 {
+        font-size: 1.8em;
+      }
+
+      header nav {
+        display: flex;
+        align-items: center;
+      }
+
+      header nav ul {
+        list-style-type: none;
+        display: flex;
+      }
+
+      header nav ul li {
+        margin: 0 10px;
+      }
+
+      header nav ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 1.1em;
+      }
+
+      /* Hamburger Icon */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: black;
+        margin: 5px 0;
+      }
+
+      /* Mobile Menu Styling */
+      .nav-menu {
+        display: flex;
+      }
+
+      .nav-menu.active {
+        display: block;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-menu ul {
+        flex-direction: column;
+        margin: 0;
+      }
+
+      .nav-menu ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        padding: 300px;
+        background-image: url('PEOPLE.png');
+        background-size: cover;
+        color: white;
+      }
+
+      .hero h2 {
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1.2em;
+      }
+
+      /* Media Queries */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-menu {
+          display: none;
+        }
+
+        header nav ul {
+          flex-direction: column;
+          display: none;
+        }
+
+        .nav-menu ul {
+          display: flex;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header>
+      <div class="logo">
+        <h1>RPLStore</h1>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="RPLStore.html">Beranda</a></li>
+          <li><a href="product.html">Produk</a></li>
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="https://wa.me/6288216118101?text=Halo%20RPLSTORE,%20Saya%20ingin%20membeli%20produk%20anda%20yaitu:%20[NAMA PRODUK]">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <h1 class="product-hero">OUR PRODUCT</h1>
+        <button class="button-hero">BUY HERE</button>
+    </div>
+
+    <!-- Content Section -->
+    <footer>
+      <p>&copy; 2024 SpeedStore | Semua Hak Cipta Dilindungi</p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.toggle('active');
+      }
+    </script>
+</body>
+</html>

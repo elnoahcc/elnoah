@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EndAssesment</title>
+  <link rel="icon" href="elnoahlogo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">\
+</head>
+<body class="fade-in">
+  <header>
+    <div class="logo">
+      <img src="elnoahlogo.png">
+    </div>
+    <nav>
+      <div class="menu-toggle" id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="formulir.html">Formulir</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="RPLStore.html">RPLStore</a></li>
+        <li><a href="flexboxstore.html">FlexboxStore</a></li>
+        <li><a href="message.html">Saran</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+  
+  </div>
+
+  <div>
+    <h1 class="greetings" align="center">HELLO USERS!</h1>
+    <p align="center">Selamat datang di website portfolio saya! Saya Elnoah, developer website ini.</p>
+    <p align="center">Saya sedang menempuh pendidikan di SMK Negeri 6 Surakarta Program Keahlian Pengembangan Perangkat Lunak dan Gim</p>
+  </div>
+<br>
+  <h2 align="center">COME LOOK MY PORTFOLIO!</h2>
+
+  <div class="features">
+    <div class="feature-box">
+      <h3>FORMULIR</h3>
+      <p>Website yang bertujuan untuk pendaftaran dan tabel data. Silahkan pencet tombol dibawah ini!</p>
+      <a href="formulir.html"><button class="button">PRESS HERE</button></a>
+    </div>
+    <div class="feature-box">
+      <h3>FLEXBOXSHOP</h3>
+      <p>Website yang tidak sempurna, Menjadi bukti bahwa belajar pasti ada kegagalan. Silahkan pencet tombol dibawah ini!</p>
+      <a href="flexboxstore.html"><button class="button">PRESS HERE</button></a>
+    </div>
+    <div class="feature-box">
+      <h3>BLOG</h3>
+      <p>Blog dibuat oleh cinta untuk kalian! Silahkan pencet tombol dibawah ini!</p>
+      <a href="blog.html"><button class="button">PRESS HERE</button></a>
+    </div>    
+    <div class="feature-box">
+      <h3>RPLSTORE</h3>
+      <p>Bekerjasama dengan RPLStore, saya membuat website mereka</p>
+      <a href="RPLStore.html"><button class="button">PRESS HERE</button></a>
+    </div>
+  </div>
+<br> 
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Contact Me</h4>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/ellnagml/"><img src="instagram.png"></a> 
+           </div>
+           <div class="social-icons">
+              <a href="https://wa.me/6288216118101"><img src="whatsapp.png"></a> 
+           </div>
+        </div>
+        <div class="footer-section">
+            <h4>Location</h4>
+            <p>
+              <a href="https://maps.app.goo.gl/QNu5q6xF3zSTgv378">
+                            Jalan Adi Sucipto No.38, Kerten, Laweyan, Surakarta, Jawa Tengah 57143 
+              </a>
+            </p>
+        </div>
+        <div class="footer-section">
+            <h4><a href="index.html">Home</a></h4>
+            <p><a href="message.html">Saran</a></p>
+          
+        </div>
+    </div>
+</footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("a"); // Pilih semua link
+    const body = document.querySelector("body");
+  
+    // Tambahkan efek fade-in saat halaman dimuat
+    body.classList.add("fade-in");
+  
+    links.forEach(link => {
+      link.addEventListener("click", event => {
+        // Mencegah navigasi langsung agar efek fade-out bisa dijalankan
+        event.preventDefault();
+        const href = link.href; // Ambil tujuan tautan
+  
+        // Tambahkan efek fade-out
+        body.classList.add("fade-out");
+  
+        // Pindah halaman setelah animasi selesai
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500); // Waktu sesuai durasi animasi fade-out
+      });
+    });
+  });
+  </script>
+</body>
+</html>

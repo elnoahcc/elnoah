@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPL Store</title>
+  <link rel="icon" href="logorpl7viska.png" type="image/png"> 
+  <style>
+    /* Mengatur tampilan dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: poppins, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+        background: rgba(255, 255, 255, 0.1); /* Transparansi ringan */
+        backdrop-filter: blur(10px); /* Efek blur di belakang */
+      color: black;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo h1 {
+      font-size: 1.8em;
+    }
+
+    header nav ul {
+      list-style-type: none;
+      display: flex;
+    }
+
+    header nav ul li {
+      margin: 0 10px;
+    }
+
+    header nav ul li a {
+      color: black;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 300px;
+      background-image: url('PEOPLE.png');
+      background-size: cover;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    .product-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-info h3 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .product-info p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .price {
+      font-size: 18px;
+      color: #e74c3c;
+      font-weight: bold;
+    }
+
+    .button {
+      padding: 10px;
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      width: 100%;
+      cursor: pointer;
+      font-family: poppins ;
+    }
+
+    .button:hover {
+      background-color: #27ae60;
+    }
+
+    /* Feature Section */
+    .features {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 20px;
+    }
+
+    .feature-box {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      text-align: center;
+    }
+
+    .feature-box h3 {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+    }
+
+    .feature-box p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+
+    /* Media Queries */
+    /* Mobile (max-width: 600px) */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero {
+      text-align: center;
+      background-image: url('1PEOPLE.png');
+      background-size: cover;
+      color: white;
+    }
+
+
+      header nav ul {
+        flex-direction: column;
+      }
+
+      .features {
+        flex-direction: column;
+      }
+
+      .feature-box {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .product-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Tablet (600px - 1000px) */
+    @media (min-width: 601px) and (max-width: 840px) {
+      header {
+        padding: 15px;
+      }
+
+      .hero {
+    padding: 200px;
+}
+
+      .hero h2 {
+        font-size: 2em;
+      }
+
+      .features {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .feature-box {
+        width: 30%;
+      }
+
+      .product-container {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .product-info h3 {
+        font-size: 24px;
+      }
+
+      .product-info p {
+        font-size: 18px;
+      }
+
+      .price {
+        font-size: 20px;
+      }
+    }
+
+    /* Desktop (min-width: 1001px) */
+    @media (min-width: 1001px) {
+      header nav ul {
+        margin-left: 30px;
+      }
+
+      /* .hero {
+        padding: 70px 20px;
+      } */
+
+      .features {
+        justify-content: space-between;
+      }
+
+      .feature-box {
+        width: 25%;
+      }
+
+      .product-container {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .product-info h3 {
+        font-size: 24px;
+      }
+
+      .product-info p {
+        font-size: 18px;
+      }
+
+      .price {
+        font-size: 20px;
+      }
+      .text-hero{
+        font-size: 100px;
+        font-style: italic;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1 a href="mainpage.html">RPLStore</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="RPLStore.html">Beranda</a></li>
+        <li><a href="product.html">Produk</a></li>
+        <li><a href="#">Tentang Kami</a></li>
+        <li><a href="https://wa.me/6288216118101?text=Halo%20RPLSTORE,%20Saya%20ingin%20membeli%20produk%20anda%20yaitu:%20[NAMA PRODUK]
+          ">Kontak</a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1 class="text-hero">HELLO! WE'ARE RPL STORE</h1>
+  </div>
+
+  <div class="features">
+    <div class="feature-box">
+      <h3>Gratis Ongkir</h3>
+      <p>Dapatkan pengiriman gratis untuk setiap pembelian tertentu.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Produk Berkualitas</h3>
+      <p>Kami menyediakan produk terbaik yang terjamin kualitasnya.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Transaksi Aman</h3>
+      <p>Transaksi Anda aman dengan berbagai metode pembayaran yang tersedia.</p>
+    </div>
+  </div>
+
+  <div class="product-container">
+    <div class="product">
+      <img src="headphone.png" alt="Produk 1">
+      <div class="product-info">
+        <h3>Headphone Xiomay X413 Bass Boosted</h3>
+        <p>Headphone Xiomay dengan penambahan bass 100% sehingga membuat pelanggan "NEW EXPERIENCE" didalam dunia audio</p>
+        <p class="price">Rp 250.000</p>
+        <button class="button">Beli Sekarang</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="macbook.png" alt="Produk 2">
+      <div class="product-info">
+        <h3>Makbook New Series</h3>
+        <p>Notebook dengan spefisifikasi RAM 200 GB, ROM 12 TB, SSD 450 GB.</p>
+        <p class="price">Rp 100.050.000</p>
+        <button class="button">Beli Sekarang</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="usb.png" alt="Produk 3">
+      <div class="product-info">
+        <h3>TWS X4560</h3>
+        <p>TWS BASSBOOSTED X4560 BRAND XIOMAY NEW SERIES NEW GENERATION</p>
+        <p class="price">Rp 100.000</p>
+        <button class="button">Beli Sekarang</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 SpeedStore | Semua Hak Cipta Dilindungi</p>
+  </footer>
+
+</body>
+</html>

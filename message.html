@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saran dan Kritik</title>
+  <link rel="icon" href="logorpl7viska.png" type="image/png">
+  <style>
+    /* Reset and General Styles */
+      /* Reset and General Styles */
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header and Navbar */
+    header {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      color: black;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .logo h1 {
+      font-size: 22px;
+    }
+
+
+    nav {
+      position: relative;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #405DE6;
+    }
+
+    /* Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+      background-color: #333;
+      height: 3px;
+      margin: 4px 0;
+      width: 25px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+
+      .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 300px 20px;
+      background-image: url('hero-image-saran.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      margin-top: 70px; /* Tambahan agar tidak tertutup navbar */
+    }
+
+    .hero h2 {
+      font-size: 50px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Form Container */
+    .form-container {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 60px auto;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    form p {
+      margin: 15px 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="date"]:focus, input[type="radio"]:focus {
+      border-color: #E1306C;
+      outline: none;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    input[type="submit"] {
+      background: linear-gradient(to right, #5B51D8, #833AB4);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:active {
+  transform: scale(0.95);
+}
+
+    input[type="submit"]:hover {
+      transition: opacity 0.5s ease;
+      background: linear-gradient(to right, #F56040, #FCAF45,#FFDC80);    }
+
+
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    table thead {
+      background-color: #08D57F;
+      color: black;
+    }
+
+    table th,
+    table td {
+      
+      padding: 12px;
+      border: 1px solid #ddd;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    table tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    table tfoot {
+      background-color: #08D57F;
+      color: black;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to bottom, #5B51D8, #feb47b);
+      border-top: 1px solid #ddd;
+      margin-top: 20px;
+    }
+
+    .footer {
+    color: aliceblue;
+    height: 50dp;
+    padding: 40px 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+img{
+  width: 90px
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="elnoahlogo.png">
+    </div>
+    <nav>
+      <div class="menu-toggle" id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="formulir.html">Formulir</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="RPLStore.html">RPLStore</a></li>
+        <li><a href="flexboxstore.html">FlexboxStore</a></li>
+        <li><a href="#">Saran</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>SARAN DAN KRITIK</h2>
+  </div>
+
+  <div class="form-container">
+    <h1 align="center" >TITIPKAN PESAN DISINI!</h1>
+    <form action="prosesstore.php" method="post">
+      <p>Nama: <input type="text" name="nama" required></p>
+      <p>Email: <input type="email" name="email" required></p>
+      <p>Kritik dan Saran<input type="text"></p>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Contact Me</h4>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/ellnagml/"><img src="instagram.png"></a> 
+           </div>
+           <div class="social-icons">
+              <a href="https://wa.me/6288216118101"><img src="whatsapp.png"></a> 
+           </div>
+        </div>
+        <div class="footer-section">
+            <h4>Location</h4>
+            <p>
+              <a href="https://maps.app.goo.gl/QNu5q6xF3zSTgv378">
+                            Jalan Adi Sucipto No.38, Kerten, Laweyan, Surakarta, Jawa Tengah 57143 
+              </a>
+            </p>
+        </div>
+        <div class="footer-section">
+            <h4><a href="index.html">Home</a></h4>
+            <p><a href="message.html">Saran</a></p>
+          
+        </div>
+    </div>
+</footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
